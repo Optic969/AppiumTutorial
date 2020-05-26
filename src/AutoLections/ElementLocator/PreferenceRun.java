@@ -1,18 +1,20 @@
+package AutoLections.ElementLocator;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import reportTest.InstallTest;
+import InstalationTest.InstallTest;
 
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
-public class Run extends InstallTest {
+public class PreferenceRun extends InstallTest {
     public static void main(String[] args) throws MalformedURLException {
         AndroidDriver<AndroidElement> driver = Capabilities();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         //xpath id className, androidUIautomator
         /* xpath Syntax
-        * //tagName[@attribute='value']
+        * tagName[@attribute='value']
         */
 
         driver.findElementByXPath("//android.widget.TextView[@text='Preference']").click();
@@ -21,5 +23,7 @@ public class Run extends InstallTest {
         driver.findElementById("android:id/checkbox").click();
         driver.findElementByXPath("(//android.widget.RelativeLayout)[2]").click();
         //android.widget.RelativeLayout[2]
+        driver.findElementByClassName("android.widget.EditText").sendKeys("hello");//Send a data to element with possibility a get input data
+        driver.findElementsByClassName("android.widget.Button").get(1).click();//Select a element inside class with use a index
     }
 }
