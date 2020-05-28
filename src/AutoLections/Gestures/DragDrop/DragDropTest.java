@@ -32,7 +32,7 @@ public class DragDropTest extends InstallTest {
         WebElement source=driver.findElementsByClassName("android.view.View").get(0);
         WebElement destination=driver.findElementsByClassName("android.view.View").get(1);
         action.longPress(longPressOptions().withElement(element(source))).moveTo(element(destination)).release().perform();
-        action.longPress(element(source)).moveTo(element(destination)).release().perform();//second variant
+        //action.longPress(element(source)).moveTo(element(destination)).release().perform();//second variant
 
 
 
